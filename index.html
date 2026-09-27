@@ -593,6 +593,38 @@ footer .credit a{color:inherit;text-decoration:none;}
 .photo-empty svg{width:34px;height:34px;opacity:.45;}
 .photo-empty span{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);opacity:.6;}
 .portrait-img{display:block;width:100%;height:100%;object-fit:cover;}
+
+/* ITINERARIO EN CARDS (diseno de la seccion Ubicacion de xv-andrea-phi) */
+#siti{position:relative;}
+.ubic-card{
+  background:linear-gradient(135deg,rgba(222,232,245,0.55),rgba(252,249,240,0.88));
+  border:1.5px solid rgba(212,175,55,0.55);
+  border-radius:5px;
+  padding:30px 22px;margin:0 auto 20px;max-width:420px;text-align:center;
+  position:relative;overflow:hidden;
+  box-shadow:0 8px 38px rgba(30,58,138,0.10),inset 0 1px 0 rgba(255,255,255,0.6);
+}
+.ubic-card::before{content:'';position:absolute;inset:8px;border:1px solid rgba(30,58,138,0.22);border-radius:3px;pointer-events:none;z-index:0;}
+.mf-corner{position:absolute;width:30px;height:30px;pointer-events:none;z-index:3;}
+.mf-tl{top:3px;left:3px;}
+.mf-tr{top:3px;right:3px;transform:scaleX(-1);}
+.mf-bl{bottom:3px;left:3px;transform:scaleY(-1);}
+.mf-br{bottom:3px;right:3px;transform:scale(-1,-1);}
+.ubic-icon{margin-bottom:12px;display:block;position:relative;z-index:1;}
+.ubic-tipo{font-family:'Great Vibes',cursive;font-size:36px;line-height:1.25;color:var(--dark);margin-bottom:8px;position:relative;z-index:1;}
+.ubic-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.4;position:relative;z-index:1;}
+.ubic-addr{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--text);line-height:1.75;margin-bottom:6px;position:relative;z-index:1;}
+.ubic-hora{font-family:'Cormorant Garamond',serif;font-size:30px;color:#0f2a63;font-weight:700;margin:12px 0 4px;letter-spacing:.02em;position:relative;z-index:1;}
+.btn-ubic{
+  display:inline-block;padding:15px 34px;min-height:52px;
+  background:linear-gradient(135deg,#1E3A8A 0%,#2f5fa8 55%,#1E3A8A 100%);color:#fff;
+  border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;
+  letter-spacing:.28em;text-transform:uppercase;text-decoration:none;
+  border:1px solid var(--gold);cursor:pointer;margin-top:10px;
+  box-shadow:0 5px 18px rgba(30,58,138,.32);transition:transform .2s,box-shadow .2s;
+  position:relative;z-index:1;
+}
+.btn-ubic:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(30,58,138,.42);}
 </style>
 </head>
 <body>
@@ -801,49 +833,6 @@ footer .credit a{color:inherit;text-decoration:none;}
     </svg>
   </div>
 
-  <!-- UBICACIONES — misa y recepción -->
-  <section id="subic">
-    <div class="sec-bg-botanica" style="background-image:url('botanica1.png');opacity:.16"></div>
-    <div class="eyebrow eyebrow-gold rv">D&oacute;nde celebraremos</div>
-    <h2 class="sec-title rv">Misa y Recepci&oacute;n</h2>
-    <div class="loc-grid">
-      <div class="loc1-card rv">
-        <div class="loc1-top">
-          <div class="loc1-pin">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          </div>
-          <div class="loc1-label">Misa de Acci&oacute;n de Gracias</div>
-          <div class="loc1-time">3:00 <span style="font-size:18px;letter-spacing:3px;">PM</span></div>
-          <div class="loc1-name" style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--dark);letter-spacing:.04em;margin:6px 0 4px;">Christ the King Presbyterian Church</div>
-          <div class="loc1-addr">1500 Resler Dr<br>El Paso, TX 79912<br><span style="font-size:13px;opacity:.7;">Texas, Estados Unidos</span></div>
-          <div class="loc1-hsep"></div>
-        </div>
-        <div class="loc1-cta">
-          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Christ+the+King+Presbyterian+Church+1500+Resler+Dr+El+Paso+TX+79912" target="_blank" rel="noopener">
-            C&oacute;mo Llegar
-          </a>
-        </div>
-      </div>
-      <div class="loc1-card rv">
-        <div class="loc1-top">
-          <div class="loc1-pin">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          </div>
-          <div class="loc1-label">Recepci&oacute;n y Festejo</div>
-          <div class="loc1-time">6:00 <span style="font-size:18px;letter-spacing:3px;">PM</span></div>
-          <div class="loc1-name" style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--dark);letter-spacing:.04em;margin:6px 0 4px;">Grace Gardens Event Center</div>
-          <div class="loc1-addr">6701 Westside Dr<br>El Paso, TX 79932<br><span style="font-size:13px;opacity:.7;">Texas, Estados Unidos</span></div>
-          <div class="loc1-hsep"></div>
-        </div>
-        <div class="loc1-cta">
-          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Grace+Gardens+Event+Center+6701+Westside+Dr+El+Paso+TX+79932" target="_blank" rel="noopener">
-            C&oacute;mo Llegar
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CALENDAR -->
   <section class="rv cal-c" id="scal">
     <div class="eyebrow">No lo olvides</div>
@@ -865,43 +854,67 @@ footer .credit a{color:inherit;text-decoration:none;}
     </svg>
   </div>
 
-  <!-- ITINERARIO -->
+  <!-- ITINERARIO — cards con el diseno de la seccion Ubicacion de xv-andrea-phi -->
   <section id="siti">
-    <div class="eyebrow eyebrow-gold rv">Programa de la Noche</div>
+    <div class="sec-bg-botanica" style="background-image:url('botanica1.png');opacity:.16"></div>
+    <div class="eyebrow eyebrow-gold rv">Programa del D&iacute;a</div>
     <h2 class="sec-title rv">Itinerario</h2>
-        <div class="itv4">
-      <div class="itv4-card rv">
-        <div class="itv4-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 21H21" opacity=".5"/><path d="M5 21V14L12 10L19 14V21"/><rect x="9" y="16" width="6" height="5" rx="1" opacity=".4"/><path d="M12 10V7"/><circle cx="12" cy="6" r="1" fill="var(--gold)" stroke="none"/><path d="M8 14H16"/>
-          </svg>
-        </div>
-        <div class="itv4-info"><div class="itv4-time">3:00 PM</div><div class="itv4-label">Misa de Acci&oacute;n de Gracias</div></div>
-      </div>
-      <div class="itv4-card rv">
-        <div class="itv4-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="7" r="2.5"/><circle cx="16" cy="6" r="2.5"/><path d="M9 10C9 10 6 13 7 18"/><path d="M9 10Q11 14 10 18"/><path d="M16 9C16 9 13 12 14 17"/><path d="M16 9Q18 13 17 17"/><path d="M10 13L14 11" stroke="var(--gold)" opacity=".6"/><circle cx="12" cy="4" r="0.5" fill="var(--gold)" stroke="none" opacity=".8"/>
-          </svg>
-        </div>
-        <div class="itv4-info"><div class="itv4-time">6:00 PM</div><div class="itv4-label">Recepci&oacute;n</div></div>
-      </div>
-      <div class="itv4-card rv">
-        <div class="itv4-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="14" r="7" opacity=".3" fill="var(--blush)" stroke="none"/><path d="M3 14H21"/><path d="M5 14C5 9 8 6 12 6C16 6 19 9 19 14"/><line x1="12" y1="14" x2="12" y2="20"/><line x1="8" y1="20" x2="16" y2="20"/><path d="M8 10Q10 8 12 10Q14 8 16 10" opacity=".4"/>
-          </svg>
-        </div>
-        <div class="itv4-info"><div class="itv4-time">7:00 PM</div><div class="itv4-label">Vals y Cena</div></div>
-      </div>
-      <div class="itv4-card rv">
-        <div class="itv4-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3L13.5 8.5H19L14.5 12L16 17.5L12 14L8 17.5L9.5 12L5 8.5H10.5Z" fill="var(--gold)" stroke="var(--gold)" opacity=".5"/><path d="M4 20Q8 16 12 20Q16 16 20 20" opacity=".4"/><circle cx="6" cy="6" r="0.6" fill="var(--gold)" stroke="none" opacity=".4"/><circle cx="18" cy="5" r="0.5" fill="var(--gold)" stroke="none" opacity=".4"/>
-          </svg>
-        </div>
-        <div class="itv4-info"><div class="itv4-time">8:00 PM</div><div class="itv4-label">&iexcl;A Bailar!</div></div>
-      </div>
+    <div class="ubic-card rv">
+        <svg class="mf-corner mf-tl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-tr" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-bl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-br" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+      <span class="ubic-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="16" y="2" width="8" height="12" rx="1" fill="#1E3A8A" opacity="0.8"/><rect x="18" y="0" width="4" height="6" rx="1" fill="#D4AF37"/><path d="M4,16 L20,8 L36,16 L36,38 L4,38 Z" fill="none" stroke="#1E3A8A" stroke-width="1.5" opacity="0.65"/><rect x="14" y="24" width="12" height="14" rx="1" fill="#1E3A8A" opacity="0.32"/><rect x="8" y="18" width="8" height="8" rx="1" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.7"/><rect x="24" y="18" width="8" height="8" rx="1" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.7"/></svg></span>
+      <div class="ubic-tipo">Misa de Acci&oacute;n de Gracias</div>
+      <div class="ubic-name">Christ the King Presbyterian Church</div>
+      <div class="ubic-addr">1500 Resler Dr<br>El Paso, TX 79912</div>
+      <div class="ubic-hora">3:00 p.m.</div>
+      <a class="btn-ubic" href="https://www.google.com/maps/search/?api=1&amp;query=Christ+the+King+Presbyterian+Church+1500+Resler+Dr+El+Paso+TX+79912" target="_blank" rel="noopener">C&oacute;mo Llegar</a>
+    </div>
+    <div class="ubic-card rv">
+        <svg class="mf-corner mf-tl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-tr" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-bl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-br" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+      <span class="ubic-icon"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><rect x="2" y="12" width="36" height="26" rx="3" stroke="#1E3A8A" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M2,12 L20,26 L38,12" stroke="#1E3A8A" stroke-width="1.5" fill="none" opacity="0.6"/><rect x="10" y="2" width="20" height="14" rx="2" stroke="#D4AF37" stroke-width="1.3" fill="rgba(30,58,138,0.07)"/><line x1="20" y1="2" x2="20" y2="16" stroke="#D4AF37" stroke-width="1.3" opacity="0.6"/><line x1="10" y1="9" x2="30" y2="9" stroke="#D4AF37" stroke-width="1" opacity="0.5"/></svg></span>
+      <div class="ubic-tipo">Recepci&oacute;n</div>
+      <div class="ubic-name">Grace Gardens Event Center</div>
+      <div class="ubic-addr">6701 Westside Dr<br>El Paso, TX 79932</div>
+      <div class="ubic-hora">6:00 p.m.</div>
+      <a class="btn-ubic" href="https://www.google.com/maps/search/?api=1&amp;query=Grace+Gardens+Event+Center+6701+Westside+Dr+El+Paso+TX+79932" target="_blank" rel="noopener">C&oacute;mo Llegar</a>
+    </div>
+    <div class="ubic-card rv">
+        <svg class="mf-corner mf-tl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-tr" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-bl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-br" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+      <span class="ubic-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1E3A8A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="11" r="4"/><circle cx="27" cy="9" r="4"/><path d="M15 16C15 16 10 21 12 31"/><path d="M15 16Q19 23 17 31"/><path d="M27 14C27 14 22 19 24 29"/><path d="M27 14Q31 21 29 29"/><path d="M17 21L25 18" stroke="#D4AF37"/><circle cx="21" cy="4" r="1" fill="#D4AF37" stroke="none"/></svg></span>
+      <div class="ubic-tipo">Vals</div>
+      <div class="ubic-name">Grace Gardens Event Center</div>
+      <div class="ubic-addr">En el sal&oacute;n de recepci&oacute;n</div>
+      <div class="ubic-hora">7:00 p.m.</div>
+    </div>
+    <div class="ubic-card rv">
+        <svg class="mf-corner mf-tl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-tr" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-bl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-br" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+      <span class="ubic-icon"><svg width="42" height="42" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="13" fill="rgba(30,58,138,0.06)" stroke="#1E3A8A" stroke-width="1.5" opacity="0.68"/><circle cx="22" cy="22" r="9" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.6"/><path d="M8 6 L8 17 M5.5 6 L5.5 12 M10.5 6 L10.5 12 M8 17 L8 38" stroke="#1E3A8A" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><path d="M36 6 C38 9 38 14 36 17 L36 38" stroke="#1E3A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.7"/><path d="M36 6 C34 9 34 14 36 17" stroke="#1E3A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="rgba(30,58,138,0.05)" opacity="0.7"/></svg></span>
+      <div class="ubic-tipo">Cena</div>
+      <div class="ubic-name">Servicio de Cena</div>
+      <div class="ubic-addr">En el sal&oacute;n de recepci&oacute;n</div>
+      <div class="ubic-hora">7:30 p.m.</div>
+    </div>
+    <div class="ubic-card rv">
+        <svg class="mf-corner mf-tl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-tr" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-bl" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+        <svg class="mf-corner mf-br" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4,24 L4,4 L24,4" stroke="rgba(212,175,55,0.78)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(212,175,55,0.65)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(30,58,138,0.40)"/><circle cx="4" cy="24" r="1.6" fill="rgba(30,58,138,0.40)"/></svg>
+      <span class="ubic-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1E3A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5L22.6 14.2H32L24.4 19.8L27 29L20 23.4L13 29L15.6 19.8L8 14.2H17.4Z" fill="#D4AF37" stroke="#D4AF37" opacity=".5"/><path d="M6 34Q13 28 20 34Q27 28 34 34" opacity=".45"/><circle cx="9" cy="9" r="1" fill="#D4AF37" stroke="none" opacity=".55"/><circle cx="31" cy="8" r="0.9" fill="#D4AF37" stroke="none" opacity=".55"/></svg></span>
+      <div class="ubic-tipo">&iexcl;A Bailar!</div>
+      <div class="ubic-name">Fiesta</div>
+      <div class="ubic-addr">En el sal&oacute;n de recepci&oacute;n</div>
+      <div class="ubic-hora">8:00 p.m.</div>
     </div>
   </section>
 
