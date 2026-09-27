@@ -403,8 +403,8 @@ section > *{position:relative;z-index:1;}
 
 /* MESA DE REGALOS — Sobre interactivo */
 .env-wrapper{display:flex;flex-direction:column;align-items:center;width:100%;text-align:center;}
-.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;outline:none;border:none;background:none;padding:0;margin:0 auto;}
-.env-body{perspective:700px;position:relative;width:260px;height:200px;animation:env-breathe 3.6s ease-in-out infinite;}
+.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;margin:26px auto 0;opacity:0;}
+.env-body{perspective:700px;position:relative;width:260px;height:200px;}
 @keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 .env-body svg.env-svg{width:100%;height:100%;}
 .env-flap-wrap{position:absolute;top:46px;left:18px;width:224px;height:86px;transform-origin:top center;transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2;}
@@ -571,6 +571,28 @@ footer .credit a{color:inherit;text-decoration:none;}
 /* PARTICULAS (injertadas de xv-itzel, paleta zafiro/oro) */
 #petals{position:fixed;inset:0;z-index:20;pointer-events:none;overflow:hidden;}
 .petal{position:absolute;top:-40px;will-change:transform;}
+
+/* LLUVIA DE SOBRES (mecanica de boda-jeffersson-y-vanessa) */
+#sgifts{position:relative;overflow:hidden;}
+.env-rain{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.env-rain-item{position:absolute;top:-46px;will-change:transform;opacity:0;}
+.env-stage{position:relative;z-index:1;}
+.env-seal{position:absolute;top:52%;left:50%;width:23%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:3;transition:opacity .35s ease,transform .5s cubic-bezier(.4,0,.2,1);pointer-events:none;}
+.env-interactive.open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.7);}
+.env-body.landed{animation:envBreathe 3.6s ease-in-out infinite;}
+@keyframes envBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.env-tap-hint{opacity:0;}
+.env-tap-hint.show{opacity:.9;animation:envHintPulse 2.4s ease-in-out infinite;}
+@keyframes envHintPulse{0%,100%{opacity:.55}50%{opacity:1}}
+.env-interactive.open~.env-tap-hint{opacity:0!important;animation:none;pointer-events:none;}
+@media(prefers-reduced-motion:reduce){.env-body.landed,.env-tap-hint.show{animation:none!important}}
+
+/* MARCOS DE FOTO VACIOS — a la espera de las fotos de la quinceanera */
+.photo-empty{position:relative;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(150deg,rgba(222,232,245,.55),rgba(247,248,251,.9) 55%,rgba(232,205,122,.16));}
+.photo-empty svg{width:34px;height:34px;opacity:.45;}
+.photo-empty span{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);opacity:.6;}
+.portrait-img{display:block;width:100%;height:100%;object-fit:cover;}
 </style>
 </head>
 <body>
@@ -651,7 +673,7 @@ footer .credit a{color:inherit;text-decoration:none;}
 
   <!-- INTRO -->
   <section style="padding:0;" id="sintro">
-    <div class="sec-bg-botanica" style="background-image:url('botanica2.png');opacity:.10"></div>
+    <div class="sec-bg-botanica" style="background-image:url('botanica2.png');opacity:.17"></div>
     <div class="intro-wrap rv">
       <p class="intro-text"><span class="intro-drop">H</span>ay sue&ntilde;os que la vida nos regala una sola vez.
         Con el coraz&oacute;n lleno de ilusi&oacute;n, el honor de tu presencia se solicita
@@ -664,7 +686,7 @@ footer .credit a{color:inherit;text-decoration:none;}
 
   <!-- RETRATO — foto de la quinceañera -->
   <section class="portrait-section rv" id="sportrait">
-    <div class="sec-bg-botanica" style="background-image:url('botanica1.png');opacity:.07"></div>
+    <div class="sec-bg-botanica" style="background-image:url('botanica3.png');opacity:.15"></div>
     <div class="eyebrow eyebrow-gold rv">La Festejada</div>
     <div class="portrait-frame rv">
       <div class="portrait-ring"></div>
@@ -694,7 +716,7 @@ footer .credit a{color:inherit;text-decoration:none;}
         <circle cx="10" cy="16" r="1.8" fill="#bcd2ec" opacity=".7"/>
         <circle cx="22" cy="6" r="2" fill="#4A7BB7" opacity=".5"/>
       </svg>
-      <img class="portrait-img" src="abigail-foto.jpg" alt="Abigail Sáenz" loading="lazy">
+      <div class="photo-empty" role="img" aria-label="Espacio para foto"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Pr&oacute;ximamente</span></div>
     </div>
     <div class="portrait-name rv">Abigail S&aacute;enz</div>
     <div class="portrait-tag rv">XV A&ntilde;os &middot; 2027</div>
@@ -781,7 +803,7 @@ footer .credit a{color:inherit;text-decoration:none;}
 
   <!-- UBICACIONES — misa y recepción -->
   <section id="subic">
-    <div class="sec-bg-botanica" style="background-image:url('botanica1.png');opacity:.08"></div>
+    <div class="sec-bg-botanica" style="background-image:url('botanica1.png');opacity:.16"></div>
     <div class="eyebrow eyebrow-gold rv">D&oacute;nde celebraremos</div>
     <h2 class="sec-title rv">Misa y Recepci&oacute;n</h2>
     <div class="loc-grid">
@@ -905,13 +927,13 @@ footer .credit a{color:inherit;text-decoration:none;}
     <div class="dc-figures rv">
       <!-- CABALLERO — lámina de moda Regencia (Costume Parisien, 1799, dominio público), fondo removido -->
       <div class="dc-fig">
-        <img src="caballero.png?v=1" alt="Caballero en levita verde estilo Regencia" loading="lazy">
+        <img src="dc-caballero.png" alt="Caballero con traje semi-formal" loading="lazy">
         <span class="dc-fig-label">Caballeros</span>
       </div>
 
       <!-- DAMA — lámina de moda Regencia (Costume Français, 1799, dominio público), fondo removido -->
       <div class="dc-fig">
-        <img src="dama.png?v=1" alt="Dama con vestido imperio y spencer verde estilo Regencia" loading="lazy">
+        <img src="dc-dama.png" alt="Dama con vestido semi-formal" loading="lazy">
         <span class="dc-fig-label">Damas</span>
       </div>
     </div>
@@ -991,9 +1013,10 @@ footer .credit a{color:inherit;text-decoration:none;}
       Tu presencia es el regalo m&aacute;s valioso.<br>
       Si deseas obsequiarme algo, con mucho cari&ntilde;o comparto esta opci&oacute;n.
     </p>
-    <div class="env-wrapper">
-    <button class="env-interactive" aria-label="Sobre de lluvia — toca para abrir" aria-expanded="false">
-      <div class="env-body">
+    <div class="env-rain" id="envRain" aria-hidden="true"></div>
+    <div class="env-stage env-wrapper">
+    <button class="env-interactive" id="envGift" type="button" aria-label="Sobre de lluvia — toca para abrir" aria-expanded="false">
+      <div class="env-body" id="envGiftBody">
         <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
           <defs>
             <linearGradient id="nc-env-fill" x1="0" y1="1" x2="1" y2="0">
@@ -1012,14 +1035,18 @@ footer .credit a{color:inherit;text-decoration:none;}
           <line x1="170" y1="30" x2="170" y2="20" stroke="#4A7BB7" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
           <line x1="110" y1="18" x2="110" y2="10" stroke="#c9dcf2" stroke-width="1" stroke-linecap="round" opacity=".5"/>
           <line x1="150" y1="18" x2="150" y2="10" stroke="#c9dcf2" stroke-width="1" stroke-linecap="round" opacity=".5"/>
-          <circle cx="130" cy="118" r="16" fill="rgba(212,175,55,.16)" stroke="rgba(212,175,55,.55)" stroke-width="1"/>
-          <text x="130" y="123" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1E3A8A" opacity=".9">AS</text>
         </svg>
         <div class="env-flap-wrap" aria-hidden="true">
           <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%">
             <path d="M0 0 L112 86 L224 0 Z" fill="url(#nc-flap-fill)" stroke="rgba(74,123,183,.55)" stroke-width="1.5" stroke-linejoin="round"/>
           </svg>
         </div>
+        <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
+          <circle cx="30" cy="30" r="28" fill="#1E3A8A"/>
+          <circle cx="30" cy="30" r="28" fill="none" stroke="#0f2a63" stroke-width="2" opacity=".6"/>
+          <circle cx="30" cy="30" r="21.5" fill="none" stroke="#e8cd7a" stroke-width="1.1" opacity=".9"/>
+          <text x="30" y="38" text-anchor="middle" font-family="'Great Vibes',cursive" font-size="23" fill="#e8cd7a">AS</text>
+        </svg>
       </div>
       <div class="env-open-content" aria-live="polite">
         <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -1029,7 +1056,7 @@ footer .credit a{color:inherit;text-decoration:none;}
         <p class="env-desc">En el sal&oacute;n encontrar&aacute;s un buz&oacute;n especial &mdash;<br>con mucho cari&ntilde;o deposita ah&iacute; tu sobre.</p>
       </div>
     </button>
-    <p class="env-tap-hint">Toca el sobre</p>
+    <p class="env-tap-hint" id="envGiftHint">Toca el sobre</p>
     </div>
   </section>
 
@@ -1053,12 +1080,12 @@ footer .credit a{color:inherit;text-decoration:none;}
     <p class="gal-quote rv">Cada foto, un instante de este sue&ntilde;o hecho realidad.</p>
     <div class="wheel-scene rv" id="wheel-scene">
       <div class="wheel-ring" id="wheel-ring">
-        <div class="wheel-card"><img src="foto1.jpg" alt="Abigail S&aacute;enz en sus XV a&ntilde;os" decoding="async"></div>
-        <div class="wheel-card"><img src="foto2.jpg" alt="Abigail S&aacute;enz en sus XV a&ntilde;os" decoding="async"></div>
-        <div class="wheel-card"><img src="foto3.jpg" alt="Abigail S&aacute;enz en sus XV a&ntilde;os" decoding="async"></div>
-        <div class="wheel-card"><img src="foto4.jpg" alt="Abigail S&aacute;enz en sus XV a&ntilde;os" decoding="async"></div>
-        <div class="wheel-card"><img src="foto5.jpg" alt="Abigail S&aacute;enz en sus XV a&ntilde;os" decoding="async"></div>
-        <div class="wheel-card"><img src="foto6.jpg" alt="Abigail S&aacute;enz en sus XV a&ntilde;os" decoding="async"></div>
+        <div class="wheel-card"><div class="photo-empty" role="img" aria-label="Espacio para foto"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Pr&oacute;ximamente</span></div></div>
+        <div class="wheel-card"><div class="photo-empty" role="img" aria-label="Espacio para foto"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Pr&oacute;ximamente</span></div></div>
+        <div class="wheel-card"><div class="photo-empty" role="img" aria-label="Espacio para foto"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Pr&oacute;ximamente</span></div></div>
+        <div class="wheel-card"><div class="photo-empty" role="img" aria-label="Espacio para foto"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Pr&oacute;ximamente</span></div></div>
+        <div class="wheel-card"><div class="photo-empty" role="img" aria-label="Espacio para foto"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Pr&oacute;ximamente</span></div></div>
+        <div class="wheel-card"><div class="photo-empty" role="img" aria-label="Espacio para foto"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Pr&oacute;ximamente</span></div></div>
       </div>
     </div>
     <p class="gal-hint rv">Arrastra para girar</p>
@@ -1628,6 +1655,56 @@ function launchPetals(ambient){
     gsap.fromTo(d,{opacity:0,y:-10},{opacity:Math.random()*.7+.3,y:window.innerHeight+40,x:(Math.random()-.5)*65,duration:7+Math.random()*5,ease:'none',onComplete:function(){d.remove()}});
   },k*220+Math.random()*320);})(k);}
 }
+
+/* LLUVIA DE SOBRES — cae hasta que la seccion se centra, ahi aterriza uno (de boda-jeffersson-y-vanessa) */
+(function(){
+  var sec=document.getElementById('sgifts'),rain=document.getElementById('envRain'),
+      btn=document.getElementById('envGift'),body=document.getElementById('envGiftBody'),
+      hint=document.getElementById('envGiftHint');
+  if(!sec||!rain||!btn)return;
+  var raining=true,landed=false,spawnCall=null,alive=0;var MAX_ALIVE=18;
+  function makeEnvelope(){
+    if(alive>=MAX_ALIVE)return; alive++;
+    var el=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    el.setAttribute('viewBox','0 0 34 24'); el.setAttribute('class','env-rain-item');
+    var w=16+Math.random()*16;
+    el.style.width=w+'px'; el.style.height=(w*24/34)+'px'; el.style.left=(Math.random()*100)+'%';
+    el.innerHTML='<rect x="1" y="1" width="32" height="22" rx="2.5" fill="#f7f8fb" stroke="#1E3A8A" stroke-width="1.2"/>'+
+                 '<path d="M1 1 L17 13 L33 1" fill="none" stroke="#D4AF37" stroke-width="1.2" stroke-linejoin="round"/>';
+    rain.appendChild(el);
+    var H=sec.offsetHeight+80,dur=5+Math.random()*4;
+    function kill(){if(el.parentNode){el.remove();alive--;}}
+    gsap.timeline({onComplete:kill})
+      .fromTo(el,{y:-46,x:0,rotation:(Math.random()-.5)*50,opacity:0},
+                 {y:H,x:(Math.random()-.5)*70,rotation:(Math.random()-.5)*160,duration:dur,ease:'none'},0)
+      .fromTo(el,{opacity:0},{opacity:.75,duration:dur*.18,ease:'power1.out'},0)
+      .to(el,{opacity:0,duration:dur*.25,ease:'power1.in'},dur*.75);
+  }
+  function scheduleSpawn(){spawnCall=gsap.delayedCall(.52,function(){if(!raining)return;makeEnvelope();scheduleSpawn();});}
+  function startRain(){for(var i=0;i<7;i++)gsap.delayedCall(i*.26,makeEnvelope);scheduleSpawn();}
+  function stopRain(){raining=false;if(spawnCall)spawnCall.kill();
+    gsap.to(rain,{opacity:0,duration:1.1,ease:'power2.out',onComplete:function(){rain.innerHTML='';alive=0;}});}
+  function land(){
+    if(landed)return; landed=true; stopRain();
+    gsap.fromTo(btn,{opacity:0,y:-150,rotation:-12,scale:.82},
+      {opacity:1,y:0,rotation:0,scale:1,duration:1.15,ease:'back.out(1.5)',
+       onComplete:function(){if(body)body.classList.add('landed');if(hint)hint.classList.add('show');}});
+  }
+  startRain();
+  /* 55% y no 'center': el reveal .rv desplaza 28px las secciones no visibles */
+  ScrollTrigger.create({trigger:sec,start:'center 55%',once:true,onEnter:land,onEnterBack:land});
+  /* red de seguridad: si el trigger no dispara, el sobre igual aparece */
+  setTimeout(function(){if(!landed)land();},9000);
+  function toggle(e){
+    if(e)e.preventDefault();
+    if(!landed){land();return;}
+    var open=btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    if(open&&body)body.classList.remove('landed');
+    ScrollTrigger.refresh();
+  }
+  btn.addEventListener('click',toggle);
+})();
 </script>
 </body>
 </html>
